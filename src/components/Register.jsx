@@ -19,8 +19,8 @@ const Register = () => {
     email: "",
     password: "",
   });
-
-  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  
+  const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const passwordRegex = /^.{6,}$/;
   const usernameRegex = /^.{5,}$/;
 
