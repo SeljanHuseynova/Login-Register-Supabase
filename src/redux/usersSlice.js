@@ -101,4 +101,5 @@ const usersSlice = createSlice({
 });
 
 export default usersSlice.reducer;
-export const resetError = usersSlice.actions;
+export const { resetError } = usersSlice.actions;
+

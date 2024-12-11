@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "../redux/usersSlice";
+import { register, resetError } from "../redux/usersSlice";
 import { Link, useNavigate } from "react-router";
 
 const Register = () => {
@@ -19,7 +19,7 @@ const Register = () => {
     email: "",
     password: "",
   });
-  
+
   useEffect(() => {
     dispatch(resetError());
   }, [dispatch]);
