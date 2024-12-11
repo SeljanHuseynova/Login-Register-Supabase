@@ -10,7 +10,6 @@ const headers = {
   Authorization: `Bearer ${apiKey}`,
 };
 
-
 export const logIn = createAsyncThunk(
   "users/logInUser",
   async (userData, { rejectWithValue }) => {
@@ -49,10 +48,9 @@ export const register = createAsyncThunk(
         },
         { headers }
       );
-      return   console.log(response);
-    
+      return console.log(response);
     } catch (error) {
-      console.log(error)
+      console.log(error);
       return rejectWithValue(
         error.response ? error.response.data : "an unexpected erorr occurred"
       );
@@ -60,14 +58,18 @@ export const register = createAsyncThunk(
   }
 );
 
-
 const usersSlice = createSlice({
   name: "users",
   initialState: {
     loading: false,
     users: null,
     error: null,
-    success: null, 
+    success: null,
+  },
+  reducers: {
+    resetError: (state) => {
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -99,3 +101,4 @@ const usersSlice = createSlice({
 });
 
 export default usersSlice.reducer;
+export const resetError = usersSlice.actions;

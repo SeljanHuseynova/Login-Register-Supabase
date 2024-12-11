@@ -20,6 +20,10 @@ const Register = () => {
     password: "",
   });
   
+  useEffect(() => {
+    dispatch(resetError());
+  }, [dispatch]);
+
   const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
   const passwordRegex = /^.{6,}$/;
   const usernameRegex = /^.{5,}$/;
@@ -72,7 +76,6 @@ const Register = () => {
         }
       });
     }
-  
   };
 
   return (
@@ -119,7 +122,9 @@ const Register = () => {
         </button>
         {error && <p className="error">{error.msg || "Sign up failed."}</p>}
         {success && <p className="success">{success}</p>}
-        <Link to="/" className="link">Already have an account? Log in!</Link>
+        <Link to="/" className="link">
+          Already have an account? Log in!
+        </Link>
       </form>
     </div>
   );

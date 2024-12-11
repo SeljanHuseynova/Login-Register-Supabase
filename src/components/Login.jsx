@@ -13,6 +13,10 @@ const Login = ({ setToken }) => {
     password: "",
   });
 
+  useEffect(() => {
+    dispatch(resetError());
+  }, [dispatch]);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setUserData((prevData) => ({
@@ -37,8 +41,6 @@ const Login = ({ setToken }) => {
     });
   };
 
- 
-
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit}>
@@ -62,10 +64,10 @@ const Login = ({ setToken }) => {
           {loading ? "Logging in..." : "LOG IN"}
         </button>
         {error && <p className="error">{error.msg || "Login failed."}</p>}
-        <Link to="/register" className="link">Don't have an account? Sign up!</Link>
+        <Link to="/register" className="link">
+          Don't have an account? Sign up!
+        </Link>
       </form>
-     
-     
     </div>
   );
 };
