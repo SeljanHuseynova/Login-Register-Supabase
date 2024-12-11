@@ -119,7 +119,7 @@ const Register = () => {
         </button>
         {error && <p className="error">{error.msg || "Sign up failed."}</p>}
         {success && <p className="success">{success}</p>}
-        <Link to="/">Already have an account? Log in!</Link>
+        <Link to="/" className="link">Already have an account? Log in!</Link>
       </form>
     </div>
   );

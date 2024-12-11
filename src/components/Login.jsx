@@ -62,7 +62,7 @@ const Login = ({ setToken }) => {
           {loading ? "Logging in..." : "LOG IN"}
         </button>
         {error && <p className="error">{error.msg || "Login failed."}</p>}
-        <Link to="/register" className="link">Don't have an account?</Link>
+        <Link to="/register" className="link">Don't have an account? Sign up!</Link>
       </form>
      
      
